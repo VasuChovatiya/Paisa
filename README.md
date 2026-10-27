@@ -9,12 +9,12 @@ Paisa is a native iOS expense tracker built from the ground up for speed, privac
 ## 📱 Screenshots & Preview
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/VasuChovatiya/Paisa/main/Screenshots/paisa-launch.gif" alt="Paisa Launch & Flow Demo" width="300" />
+  <img src="Screenshots/paisa-launch.gif" alt="Paisa Launch & Flow Demo" width="300" />
 </p>
 
 | Dashboard | Insights | Add Expense | Settings |
 |:---:|:---:|:---:|:---:|
-| <img src="https://raw.githubusercontent.com/VasuChovatiya/Paisa/main/Screenshots/01-home-dark.png" width="210" alt="Home Dashboard" /> | <img src="https://raw.githubusercontent.com/VasuChovatiya/Paisa/main/Screenshots/02-insights-dark.png" width="210" alt="Insights & Breakdown" /> | <img src="https://raw.githubusercontent.com/VasuChovatiya/Paisa/main/Screenshots/04-add-expense-dark.png" width="210" alt="Add Expense Modal" /> | <img src="https://raw.githubusercontent.com/VasuChovatiya/Paisa/main/Screenshots/03-settings-dark.png" width="210" alt="Settings & Export" /> |
+| <img src="Screenshots/01-home-dark.png" width="210" alt="Home Dashboard" /> | <img src="Screenshots/02-insights-dark.png" width="210" alt="Insights & Breakdown" /> | <img src="Screenshots/04-add-expense-dark.png" width="210" alt="Add Expense Modal" /> | <img src="Screenshots/03-settings-dark.png" width="210" alt="Settings & Export" /> |
 
 ---
 
