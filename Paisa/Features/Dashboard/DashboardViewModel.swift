@@ -14,7 +14,7 @@ import SwiftData
 final class DashboardViewModel {
     var selectedMonth: Date = Date()
     var showAddTransaction: Bool = false
-    var transactionToEdit: Transaction? = nil
+    var transactionToEdit: Transaction?
 
     private(set) var summary: MonthlySummary?
 

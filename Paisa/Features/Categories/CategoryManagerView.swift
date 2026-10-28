@@ -18,7 +18,7 @@ struct CategoryManagerView: View {
     @Environment(\.dismiss) private var dismiss
 
     @State private var showAddCategory: Bool = false
-    @State private var categoryToEdit: Category? = nil
+    @State private var categoryToEdit: Category?
 
     private var activeCategories: [Category] { allCategories.filter { !$0.isArchived } }
     private var archivedCategories: [Category] { allCategories.filter { $0.isArchived } }
@@ -165,7 +165,7 @@ private let categoryColors = [
 ]
 
 struct AddCategoryView: View {
-    var editing: Category? = nil
+    var editing: Category?
 
     @Environment(\.modelContext) private var modelContext
     @Environment(\.dismiss) private var dismiss

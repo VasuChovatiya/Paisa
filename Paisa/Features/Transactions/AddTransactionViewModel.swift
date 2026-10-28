@@ -15,7 +15,7 @@ final class AddTransactionViewModel {
     // MARK: - Input fields
     var amountString: String = ""
     var selectedType: TransactionType = .expense
-    var selectedCategory: Category? = nil
+    var selectedCategory: Category?
     var selectedDate: Date = Date()
     var selectedPaymentMethod: PaymentMethod = .upi
     var note: String = ""
@@ -50,8 +50,8 @@ final class AddTransactionViewModel {
             .replacingOccurrences(of: ",", with: "")
             .replacingOccurrences(of: "₹", with: "")
             .trimmingCharacters(in: .whitespaces)
-        guard let d = Decimal(string: cleaned), d > 0 else { return nil }
-        let units = NSDecimalNumber(decimal: d * 100).intValue
+        guard let amount = Decimal(string: cleaned), amount > 0 else { return nil }
+        let units = NSDecimalNumber(decimal: amount * 100).intValue
         return units > 0 ? units : nil
     }
 
@@ -79,11 +79,11 @@ final class AddTransactionViewModel {
         } else {
             let tx = Transaction(
                 amountMinorUnits: units,
-                type:             selectedType,
-                date:             selectedDate,
-                category:         cat,
-                paymentMethod:    selectedPaymentMethod,
-                note:             note
+                type: selectedType,
+                date: selectedDate,
+                category: cat,
+                paymentMethod: selectedPaymentMethod,
+                note: note
             )
             context.insert(tx)
         }
@@ -93,10 +93,10 @@ final class AddTransactionViewModel {
     // MARK: - Private helpers
 
     private func formatAmount(_ minorUnits: Int) -> String {
-        let d = Decimal(minorUnits) / 100
-        let f = NumberFormatter()
-        f.minimumFractionDigits = 0
-        f.maximumFractionDigits = 2
-        return (f.string(from: d as NSDecimalNumber)) ?? "\(d)"
+        let amount = Decimal(minorUnits) / 100
+        let formatter = NumberFormatter()
+        formatter.minimumFractionDigits = 0
+        formatter.maximumFractionDigits = 2
+        return (formatter.string(from: amount as NSDecimalNumber)) ?? "\(amount)"
     }
 }

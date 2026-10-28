@@ -12,12 +12,12 @@ import SwiftUI
 extension Color {
     /// Initialize a SwiftUI Color from a hexadecimal string (e.g. "#00C896" or "00C896").
     init(hex: String) {
-        var h = hex.trimmingCharacters(in: .whitespacesAndNewlines)
-        if h.hasPrefix("#") { h.removeFirst() }
+        var hexDigits = hex.trimmingCharacters(in: .whitespacesAndNewlines)
+        if hexDigits.hasPrefix("#") { hexDigits.removeFirst() }
 
         let rgb: UInt64
         var value: UInt64 = 0
-        if Scanner(string: h).scanHexInt64(&value) {
+        if Scanner(string: hexDigits).scanHexInt64(&value) {
             rgb = value
         } else {
             rgb = 0

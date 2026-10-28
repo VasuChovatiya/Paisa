@@ -71,6 +71,8 @@ enum ModelContainerFactory {
         seedSampleTransactions(in: context)
     }
 
+    // Sample data reads best as one transaction per line.
+    // swiftlint:disable:next function_body_length
     static func seedSampleTransactions(in context: ModelContext, clearExisting: Bool = false) {
         if clearExisting {
             let allTx = (try? context.fetch(FetchDescriptor<Transaction>())) ?? []
@@ -102,6 +104,7 @@ enum ModelContainerFactory {
             let minute: Int
         }
 
+        // swiftlint:disable line_length
         let samples: [SampleItem] = [
             // Today
             SampleItem(minorUnits: 38000, type: .expense, categoryName: "Food & Dining", method: .upi, note: "Blue Tokai Coffee & Croissant", daysAgo: 0, hour: 9, minute: 15),
@@ -185,6 +188,7 @@ enum ModelContainerFactory {
             SampleItem(minorUnits: 2800000, type: .expense, categoryName: "Bills & Utilities", method: .bank, note: "Apartment Rent & Society Maintenance", daysAgo: 84, hour: 10, minute: 0),
             SampleItem(minorUnits: 4820000, type: .expense, categoryName: "Shopping", method: .card, note: "iPad Air & Smart Folio Case", daysAgo: 75, hour: 17, minute: 0),
         ]
+        // swiftlint:enable line_length
 
         for item in samples {
             let baseDate = calendar.date(byAdding: .day, value: -item.daysAgo, to: now) ?? now

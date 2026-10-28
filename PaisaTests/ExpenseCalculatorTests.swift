@@ -35,8 +35,8 @@ final class ExpenseCalculatorTests: XCTestCase {
     func testTotalExpenses_mixed() {
         let txs = [
             makeTransaction(amountMinorUnits: 10000, type: .expense),
-            makeTransaction(amountMinorUnits: 5000,  type: .income),
-            makeTransaction(amountMinorUnits: 3500,  type: .expense),
+            makeTransaction(amountMinorUnits: 5000, type: .income),
+            makeTransaction(amountMinorUnits: 3500, type: .expense),
         ]
         XCTAssertEqual(ExpenseCalculator.totalExpenses(from: txs), 13500)
     }
@@ -56,7 +56,7 @@ final class ExpenseCalculatorTests: XCTestCase {
         let txs = [
             makeTransaction(amountMinorUnits: 50000, type: .income),
             makeTransaction(amountMinorUnits: 10000, type: .expense),
-            makeTransaction(amountMinorUnits: 5000,  type: .income),
+            makeTransaction(amountMinorUnits: 5000, type: .income),
         ]
         XCTAssertEqual(ExpenseCalculator.totalIncome(from: txs), 55000)
     }
@@ -70,7 +70,7 @@ final class ExpenseCalculatorTests: XCTestCase {
     func testNetBalance_positive() {
         let txs = [
             makeTransaction(amountMinorUnits: 100000, type: .income),
-            makeTransaction(amountMinorUnits: 30000,  type: .expense),
+            makeTransaction(amountMinorUnits: 30000, type: .expense),
         ]
         XCTAssertEqual(ExpenseCalculator.netBalance(from: txs), 70000)
     }

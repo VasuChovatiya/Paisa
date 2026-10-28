@@ -134,19 +134,19 @@ enum CSVExportService {
     }
 
     private static func makeDateFormatter() -> DateFormatter {
-        let f = DateFormatter()
-        f.dateFormat = "yyyy-MM-dd"
-        f.locale = Locale(identifier: "en_US_POSIX")
-        return f
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd"
+        formatter.locale = Locale(identifier: "en_US_POSIX")
+        return formatter
     }
 
     private static func makeAmountFormatter() -> NumberFormatter {
-        let f = NumberFormatter()
-        f.numberStyle = .decimal
-        f.minimumFractionDigits = 2
-        f.maximumFractionDigits = 2
-        f.locale = Locale(identifier: "en_US_POSIX")
-        f.groupingSeparator = ""
-        return f
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .decimal
+        formatter.minimumFractionDigits = 2
+        formatter.maximumFractionDigits = 2
+        formatter.locale = Locale(identifier: "en_US_POSIX")
+        formatter.groupingSeparator = ""
+        return formatter
     }
 }

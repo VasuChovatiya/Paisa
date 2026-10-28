@@ -14,12 +14,12 @@ struct MonthlySummary {
     let transactions: [Transaction]
 
     var totalExpenseMinorUnits: Int { ExpenseCalculator.totalExpenses(from: transactions) }
-    var totalIncomeMinorUnits: Int  { ExpenseCalculator.totalIncome(from: transactions) }
-    var netBalanceMinorUnits: Int   { ExpenseCalculator.netBalance(from: transactions) }
+    var totalIncomeMinorUnits: Int { ExpenseCalculator.totalIncome(from: transactions) }
+    var netBalanceMinorUnits: Int { ExpenseCalculator.netBalance(from: transactions) }
 
     var totalExpense: Decimal { Decimal(totalExpenseMinorUnits) / 100 }
-    var totalIncome: Decimal  { Decimal(totalIncomeMinorUnits)  / 100 }
-    var netBalance: Decimal   { Decimal(netBalanceMinorUnits)   / 100 }
+    var totalIncome: Decimal { Decimal(totalIncomeMinorUnits)  / 100 }
+    var netBalance: Decimal { Decimal(netBalanceMinorUnits)   / 100 }
 
     var categoryBreakdown: [ExpenseCalculator.CategoryTotal] {
         ExpenseCalculator.categoryBreakdown(from: transactions, type: .expense)

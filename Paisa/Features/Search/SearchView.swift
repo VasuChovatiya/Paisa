@@ -29,8 +29,8 @@ struct SearchView: View {
 
     @State private var searchText: String = ""
     @State private var selectedType: SearchTypeFilter = .all
-    @State private var selectedCategoryId: UUID? = nil
-    @State private var editingTransaction: Transaction? = nil
+    @State private var selectedCategoryId: UUID?
+    @State private var editingTransaction: Transaction?
 
     private var activeCategories: [Category] {
         allCategories.filter { !$0.isArchived }

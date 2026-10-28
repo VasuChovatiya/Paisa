@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct SplashView: View {
-    var onFinished: (() -> Void)? = nil
+    var onFinished: (() -> Void)?
 
     @State private var isAnimating = false
     @State private var opacity: Double = 0.0

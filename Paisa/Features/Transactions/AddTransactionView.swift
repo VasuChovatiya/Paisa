@@ -17,8 +17,8 @@ struct AddTransactionView: View {
     @Query(sort: \Category.sortOrder, order: .forward)
     private var allCategories: [Category]
 
-    var editingTransaction: Transaction? = nil
-    var lastTransaction: Transaction? = nil
+    var editingTransaction: Transaction?
+    var lastTransaction: Transaction?
 
     @State private var viewModel: AddTransactionViewModel
     @FocusState private var amountFocused: Bool

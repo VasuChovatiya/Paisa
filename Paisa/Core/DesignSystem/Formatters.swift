@@ -14,14 +14,14 @@ import Foundation
 enum PaisaFormatter {
 
     private static let currencyFormatter: NumberFormatter = {
-        let f = NumberFormatter()
-        f.numberStyle = .decimal
-        f.minimumFractionDigits = 0
-        f.maximumFractionDigits = 2
-        f.groupingSize = 3
-        f.groupingSeparator = ","
-        f.locale = Locale(identifier: "en_IN")
-        return f
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .decimal
+        formatter.minimumFractionDigits = 0
+        formatter.maximumFractionDigits = 2
+        formatter.groupingSize = 3
+        formatter.groupingSeparator = ","
+        formatter.locale = Locale(identifier: "en_IN")
+        return formatter
     }()
 
     /// Formats a Decimal as "₹1,25,000" (Indian grouping notation)

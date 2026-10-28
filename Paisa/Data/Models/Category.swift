@@ -71,25 +71,25 @@ final class Category {
 extension Category {
     static var defaultCategories: [Category] {
         let expenseCategories: [(name: String, icon: String, color: String, order: Int)] = [
-            ("Food & Dining",   "fork.knife",          "#FF6B6B", 0),
-            ("Transport",       "car.fill",             "#FF9F43", 1),
-            ("Shopping",        "bag.fill",             "#A29BFE", 2),
-            ("Bills & Utilities","bolt.fill",           "#6C5CE7", 3),
-            ("Health",          "heart.fill",           "#FD79A8", 4),
-            ("Entertainment",   "play.fill",            "#00CEC9", 5),
-            ("Travel",          "airplane",             "#0984E3", 6),
-            ("Education",       "book.fill",            "#00B894", 7),
-            ("Personal Care",   "sparkles",             "#E17055", 8),
-            ("Other Expense",   "ellipsis.circle.fill", "#636E72", 9),
+            ("Food & Dining", "fork.knife", "#FF6B6B", 0),
+            ("Transport", "car.fill", "#FF9F43", 1),
+            ("Shopping", "bag.fill", "#A29BFE", 2),
+            ("Bills & Utilities", "bolt.fill", "#6C5CE7", 3),
+            ("Health", "heart.fill", "#FD79A8", 4),
+            ("Entertainment", "play.fill", "#00CEC9", 5),
+            ("Travel", "airplane", "#0984E3", 6),
+            ("Education", "book.fill", "#00B894", 7),
+            ("Personal Care", "sparkles", "#E17055", 8),
+            ("Other Expense", "ellipsis.circle.fill", "#636E72", 9),
         ]
 
         let incomeCategories: [(name: String, icon: String, color: String, order: Int)] = [
-            ("Salary",          "indianrupeesign.circle.fill", "#00B894", 10),
-            ("Freelance",       "laptopcomputer",              "#0984E3", 11),
-            ("Business",        "briefcase.fill",              "#6C5CE7", 12),
-            ("Investment",      "chart.line.uptrend.xyaxis",   "#00CEC9", 13),
-            ("Gift",            "gift.fill",                   "#FD79A8", 14),
-            ("Other Income",    "plus.circle.fill",            "#A29BFE", 15),
+            ("Salary", "indianrupeesign.circle.fill", "#00B894", 10),
+            ("Freelance", "laptopcomputer", "#0984E3", 11),
+            ("Business", "briefcase.fill", "#6C5CE7", 12),
+            ("Investment", "chart.line.uptrend.xyaxis", "#00CEC9", 13),
+            ("Gift", "gift.fill", "#FD79A8", 14),
+            ("Other Income", "plus.circle.fill", "#A29BFE", 15),
         ]
 
         var all: [Category] = []

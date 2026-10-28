@@ -23,10 +23,10 @@ struct SettingsView: View {
     @AppStorage("month_start_day")  private var monthStartDay: Int = 1
 
     @State private var showExportSheet: Bool = false
-    @State private var exportURL: URL? = nil
+    @State private var exportURL: URL?
     @State private var showDeleteAlert: Bool = false
     @State private var showCategoryManager: Bool = false
-    @State private var exportError: String? = nil
+    @State private var exportError: String?
     @State private var showDemoDataActionSheet: Bool = false
     @State private var showDemoDataLoadedAlert: Bool = false
 

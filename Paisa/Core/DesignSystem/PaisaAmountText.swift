@@ -12,7 +12,7 @@ import SwiftUI
 
 struct PaisaAmountText: View {
     let amount: Decimal
-    var type: TransactionType? = nil
+    var type: TransactionType?
     var size: CGFloat = 34
     var showSign: Bool = false
 

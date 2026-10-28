@@ -78,7 +78,7 @@ enum ExpenseCalculator {
         let incomeMinorUnits: Int
 
         var expense: Decimal { Decimal(expenseMinorUnits) / 100 }
-        var income: Decimal  { Decimal(incomeMinorUnits)  / 100 }
+        var income: Decimal { Decimal(incomeMinorUnits)  / 100 }
     }
 
     static func dailyBreakdown(

@@ -92,13 +92,13 @@ enum PaisaFont {
     }
 
     // MARK: - Standard Semantic Presets
-    static func display()  -> Font { bold(34, design: .rounded) }
-    static func title1()   -> Font { bold(28, design: .rounded) }
-    static func title2()   -> Font { semibold(22, design: .rounded) }
-    static func title3()   -> Font { semibold(18, design: .rounded) }
+    static func display() -> Font { bold(34, design: .rounded) }
+    static func title1() -> Font { bold(28, design: .rounded) }
+    static func title2() -> Font { semibold(22, design: .rounded) }
+    static func title3() -> Font { semibold(18, design: .rounded) }
     static func headline() -> Font { semibold(16, design: .default) }
-    static func body()     -> Font { regular(15, design: .default) }
-    static func callout()  -> Font { medium(14, design: .default) }
-    static func caption()  -> Font { regular(12, design: .default) }
+    static func body() -> Font { regular(15, design: .default) }
+    static func callout() -> Font { medium(14, design: .default) }
+    static func caption() -> Font { regular(12, design: .default) }
     static func caption2() -> Font { medium(11, design: .default) }
 }

@@ -39,9 +39,9 @@ struct TransactionListView: View {
             groups[day, default: []].append(tx)
         }
 
-        return groups.keys
-            .sorted(by: >)
-            .map { day in (date: day, transactions: groups[day]!) }
+        return groups
+            .sorted { $0.key > $1.key }
+            .map { (date: $0.key, transactions: $0.value) }
     }
 
     var body: some View {

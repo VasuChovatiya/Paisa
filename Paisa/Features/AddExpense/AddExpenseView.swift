@@ -16,10 +16,10 @@ struct AddExpenseView: View {
     @Query(sort: \Category.sortOrder, order: .forward)
     private var allCategories: [Category]
 
-    var onSaved: (() -> Void)? = nil
+    var onSaved: (() -> Void)?
 
     @State private var amountString: String = ""
-    @State private var selectedCategory: Category? = nil
+    @State private var selectedCategory: Category?
     @State private var selectedPaymentMethod: PaymentMethod = .upi
     @State private var date: Date = Date()
     @State private var note: String = ""

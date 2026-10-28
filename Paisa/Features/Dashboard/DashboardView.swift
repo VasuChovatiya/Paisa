@@ -192,8 +192,8 @@ struct DashboardView: View {
                         AxisGridLine(stroke: StrokeStyle(dash: [4]))
                             .foregroundStyle(PaisaColors.textTertiary.opacity(0.3))
                         AxisValueLabel {
-                            if let v = value.as(Int.self) {
-                                Text("₹\(v / 100)")
+                            if let paise = value.as(Int.self) {
+                                Text("₹\(paise / 100)")
                                     .font(PaisaFont.caption())
                                     .foregroundStyle(PaisaColors.textTertiary)
                             }
