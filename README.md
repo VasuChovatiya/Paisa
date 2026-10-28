@@ -1,6 +1,7 @@
 # Paisa (पैसा) 💰
 
 [![CI](https://github.com/VasuChovatiya/Paisa/actions/workflows/ci.yml/badge.svg)](https://github.com/VasuChovatiya/Paisa/actions/workflows/ci.yml)
+[![SwiftLint](https://img.shields.io/badge/code_style-SwiftLint-F05138?logo=swift&logoColor=white)](.swiftlint.yml)
 
 > **iOS-first · SwiftUI · Offline-first · Privacy-first · India-ready Personal Expense Tracker**
 
