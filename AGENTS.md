@@ -70,7 +70,7 @@ Paisa/
     └── check-xcsset.sh
 ```
 
-## Rules (from NATIVE_IOS_PROJECT_RULES.md)
+## Rules
 
 - **SwiftUI only** — no UIKit, except `UIActivityViewController` bridge in `ShareSheet`
 - **`@Observable`** — not `ObservableObject`
@@ -101,4 +101,4 @@ bash scripts/check-xcsset.sh
 
 ## Adding New Files
 
-After adding Swift files, make sure to add them to the Xcode target (Build Phases → Compile Sources). The project uses `.xcodeproj` directly (no XcodeGen).
+`Paisa/` and `PaisaTests/` are synchronized folders: Swift files added there join the `Paisa` and `PaisaTests` targets automatically. The project uses `.xcodeproj` directly (no XcodeGen).
