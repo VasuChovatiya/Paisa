@@ -1,5 +1,7 @@
 # Paisa (पैसा) 💰
 
+[![CI](https://github.com/VasuChovatiya/Paisa/actions/workflows/ci.yml/badge.svg)](https://github.com/VasuChovatiya/Paisa/actions/workflows/ci.yml)
+
 > **iOS-first · SwiftUI · Offline-first · Privacy-first · India-ready Personal Expense Tracker**
 
 Paisa is a native iOS expense tracker built from the ground up for speed, privacy, and precision. It stores financial amounts in integer minor units (paise), ensures total offline privacy with SwiftData, and features rich native visualizations with Swift Charts.
@@ -78,8 +80,7 @@ Paisa/
 ## 🚀 Getting Started
 
 ### Prerequisites
-- macOS Sonoma 14.0 or later
-- Xcode 15.4 or Xcode 16+
+- Xcode 27 or later (the project uses Xcode 27's project format)
 - iOS 17.6+ Simulator or Device
 
 ### Running the App
