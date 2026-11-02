@@ -36,7 +36,8 @@ Paisa/
 │   ├── Services/
 │   │   ├── ExpenseCalculator.swift        # Pure arithmetic (integer minor units)
 │   │   ├── MonthlySummaryService.swift    # Monthly grouping & MoM comparison
-│   │   └── CSVExportService.swift         # RFC 4180 CSV + injection protection
+│   │   ├── CSVExportService.swift         # RFC 4180 CSV + injection protection
+│   │   └── AmountParser.swift             # Amount text field ↔ paise, strict
 │   └── Features/
 │       ├── Root/
 │       │   └── RootView.swift
@@ -65,7 +66,10 @@ Paisa/
 ├── PaisaTests/
 │   ├── ExpenseCalculatorTests.swift
 │   ├── MonthlySummaryTests.swift
-│   └── CSVExportServiceTests.swift
+│   ├── CSVExportServiceTests.swift
+│   ├── AmountParserTests.swift
+│   ├── PaisaFormatterTests.swift
+│   └── AddTransactionViewModelTests.swift
 └── scripts/
     └── check-xcsset.sh
 ```
