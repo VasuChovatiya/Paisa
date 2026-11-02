@@ -15,7 +15,7 @@ extension Int {
         Decimal(self) / 100
     }
 
-    /// Formats stored minor units (paise) into an Indian localized currency string (e.g. ₹1,250.00).
+    /// Formats stored minor units (paise) into an Indian localized currency string (e.g. ₹1,250 or ₹1,250.50).
     var asFormattedCurrency: String {
         PaisaFormatter.currency(minorUnits: self)
     }

@@ -13,25 +13,37 @@ import Foundation
 
 enum PaisaFormatter {
 
-    private static let currencyFormatter: NumberFormatter = {
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .decimal
-        formatter.minimumFractionDigits = 0
-        formatter.maximumFractionDigits = 2
-        formatter.groupingSize = 3
-        formatter.groupingSeparator = ","
-        formatter.locale = Locale(identifier: "en_IN")
-        return formatter
-    }()
+    /// Whole rupees drop the decimals; anything with paise shows both digits.
+    private static let wholeFormatter = makeFormatter(fractionDigits: 0)
+    private static let paiseFormatter = makeFormatter(fractionDigits: 2)
 
-    /// Formats a Decimal as "₹1,25,000" (Indian grouping notation)
+    /// Formats a Decimal as "₹1,25,000" or "₹125.50" (Indian grouping notation)
     static func currency(_ decimal: Decimal) -> String {
-        let formatted = currencyFormatter.string(from: decimal as NSDecimalNumber) ?? "\(decimal)"
+        let formatter = isWhole(decimal) ? wholeFormatter : paiseFormatter
+        let formatted = formatter.string(from: decimal as NSDecimalNumber) ?? "\(decimal)"
         return "₹\(formatted)"
     }
 
     /// Formats an Int minor-unit value (paise) as "₹125.50"
     static func currency(minorUnits: Int) -> String {
         currency(Decimal(minorUnits) / 100)
+    }
+
+    private static func makeFormatter(fractionDigits: Int) -> NumberFormatter {
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .decimal
+        formatter.minimumFractionDigits = fractionDigits
+        formatter.maximumFractionDigits = fractionDigits
+        formatter.groupingSize = 3
+        formatter.groupingSeparator = ","
+        formatter.locale = Locale(identifier: "en_IN")
+        return formatter
+    }
+
+    private static func isWhole(_ decimal: Decimal) -> Bool {
+        var value = decimal
+        var rounded = Decimal()
+        NSDecimalRound(&rounded, &value, 0, .plain)
+        return rounded == decimal
     }
 }
