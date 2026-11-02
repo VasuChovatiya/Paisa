@@ -29,7 +29,7 @@ final class AddTransactionViewModel {
     init(editing transaction: Transaction? = nil, lastTransaction: Transaction? = nil) {
         if let tx = transaction {
             // Edit mode
-            amountString         = formatAmount(tx.amountMinorUnits)
+            amountString         = AmountParser.editableText(minorUnits: tx.amountMinorUnits)
             selectedType         = tx.type
             selectedCategory     = tx.category
             selectedDate         = tx.date
@@ -46,13 +46,7 @@ final class AddTransactionViewModel {
     // MARK: - Computed
 
     var amountMinorUnits: Int? {
-        let cleaned = amountString
-            .replacingOccurrences(of: ",", with: "")
-            .replacingOccurrences(of: "₹", with: "")
-            .trimmingCharacters(in: .whitespaces)
-        guard let amount = Decimal(string: cleaned), amount > 0 else { return nil }
-        let units = NSDecimalNumber(decimal: amount * 100).intValue
-        return units > 0 ? units : nil
+        AmountParser.minorUnits(from: amountString)
     }
 
     var isValid: Bool {
@@ -88,15 +82,5 @@ final class AddTransactionViewModel {
             context.insert(tx)
         }
         try? context.save()
-    }
-
-    // MARK: - Private helpers
-
-    private func formatAmount(_ minorUnits: Int) -> String {
-        let amount = Decimal(minorUnits) / 100
-        let formatter = NumberFormatter()
-        formatter.minimumFractionDigits = 0
-        formatter.maximumFractionDigits = 2
-        return (formatter.string(from: amount as NSDecimalNumber)) ?? "\(amount)"
     }
 }
