@@ -58,19 +58,12 @@ enum MonthlySummaryService {
         from allTransactions: [Transaction],
         calendar: Calendar = .current
     ) -> [MonthlySummary] {
-        var seen: Set<String> = []
-        var months: [Date] = []
-
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM"
+        var months: Set<Date> = []
 
         for tx in allTransactions {
-            let key = formatter.string(from: tx.date)
-            if seen.insert(key).inserted {
-                let comps = calendar.dateComponents([.year, .month], from: tx.date)
-                if let monthStart = calendar.date(from: comps) {
-                    months.append(monthStart)
-                }
+            let comps = calendar.dateComponents([.year, .month], from: tx.date)
+            if let monthStart = calendar.date(from: comps) {
+                months.insert(monthStart)
             }
         }
 
