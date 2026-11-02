@@ -116,7 +116,7 @@ enum CSVExportService {
         var value = field
 
         // Formula injection protection: prefix with a single quote if starts with risky chars
-        let injectionPrefixes: Set<Character> = ["=", "+", "-", "@"]
+        let injectionPrefixes: Set<Character> = ["=", "+", "-", "@", "\t", "\r"]
         if let first = value.first, injectionPrefixes.contains(first) {
             value = "'" + value
         }
